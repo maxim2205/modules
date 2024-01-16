@@ -1,5 +1,3 @@
-
-
 // необходимо обернуть все модальные окна в контейнер и задать в init, init({selector: "selector})
 const super_modal = {
     container: null,
@@ -71,5 +69,3 @@ const super_modal = {
         }
     }
 }
-
-export {super_modal};

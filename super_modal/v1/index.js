@@ -71,5 +71,3 @@ const super_modal = {
         }
     }
 }
-
-export {super_modal};

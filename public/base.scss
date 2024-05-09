@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+a,
+button,
+input,
+label,
+select {
+  border: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
+  outline: none;
+  color: inherit;
+  box-shadow: none;
+}
+a,
+button,
+label,
+select {
+  cursor: pointer;
+}
+a:active,
+a:focus,
+a:hover,
+a:visited {
+  color: inherit;
+}
+input,
+label,
+select,
+input::placeholder,
+input:-ms-input-placeholder,
+input::-ms-input-placeholder,
+input::-moz-placeholder,
+input::-webkit-input-placeholder {
+  vertical-align: middle;
+}
+.nowrap {
+  white-space: pre;
+}

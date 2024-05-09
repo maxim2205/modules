@@ -1,0 +1,108 @@
+@mixin media($size) {
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+body {
+  margin: 0;
+  &.super_modal_open {
+    overflow: hidden;
+  }
+  .super_modal {
+    z-index: 1000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+    font-size: 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    @include media(576px) {
+      padding: 2em;
+      align-items: center;
+    }
+    .super_modal_overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      transition: .2s;
+      z-index: 1000001;
+      box-sizing: border-box;
+    }
+    .super_modal_close {
+      position: absolute;
+      width: 2.5em;
+      height: 2.5em;
+      z-index: 1000003;
+      right: 1em;
+      top: 1em;
+      background: rgba(#000, .75);
+      cursor: pointer;
+      border-radius: 50%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.button_hidden {
+        display: none;
+      }
+      svg {
+        width: 60%;
+        path {
+          fill-opacity: .85;
+        }
+      }
+      &:hover {
+        background: rgba(#000, .85);
+        svg {
+          path {
+            fill-opacity: 1;
+          }
+        }
+      }
+      @include media(576px) {
+        width: 3em;
+        height: 3em;
+        right: 2em;
+        top: 2em;
+      }
+    }
+    .super_modal_container {
+      max-height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      transform: translateY(100%);
+      transition: .2s;
+      z-index: 1000002;
+      overflow: auto;
+      @include media(576px) {
+        opacity: 0;
+        width: auto;
+        transform: translateY(0);
+      }
+      & > * {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    &.open {
+      visibility: visible !important;
+      .super_modal_overlay {
+        background: rgba(#000, 0.85);
+      }
+      .super_modal_container {
+        transform: translateY(0);
+        @include media(576px) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

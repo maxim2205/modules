@@ -6,6 +6,7 @@ import cookie from './cookie.js';
 import params from './params.js';
 import validate_phone_number from './validate_phone_number.js';
 import send_lead from './send_lead.js';
+import select from './select.js';
 
 export {
     log,
@@ -15,5 +16,6 @@ export {
     cookie,
     params,
     validate_phone_number,
-    send_lead
+    send_lead,
+    select
 }
